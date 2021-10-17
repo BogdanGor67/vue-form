@@ -1,7 +1,12 @@
+
 *,
 html,
 body {
 	box-sizing: border-box;
+}
+
+li {
+	list-style: none;
 }
 
 $main-color: #2C2738;
@@ -10,6 +15,9 @@ $placeholder-color: #7C9CBF;
 $second-color: #0880AE;
 $white-color: #EBF4F8;
 $span-color: #756F86;
+$wrong-color: #FF7171;
+
+@import 'v-select.scss';
 
 .form-container {
 	width: 100%;
@@ -21,6 +29,7 @@ $span-color: #756F86;
 	font-size: 16px;
 	border-radius: 24px;
 	border: 1px solid black;
+	margin-bottom: 60px;
 }
 
 .registration-title {
@@ -41,7 +50,8 @@ $span-color: #756F86;
 	display: flex;
 	width: 100%;
 	flex-direction: column;
-	margin-bottom: 30px;
+	margin-bottom: 34px;
+	position: relative;
 }
 
 .label-span {
@@ -68,6 +78,18 @@ $span-color: #756F86;
 	}
 }
 
+.enter-link {
+	display: inline-block;
+	margin-left: 6px;
+	color: $second-color;
+	text-decoration: none;
+
+	&--second {
+		margin-left: 5px;
+		margin-right: 5px;
+	}
+}
+
 .form-btn {
 	height: 56px;
 	width: 100%;
@@ -78,6 +100,13 @@ $span-color: #756F86;
 	border: none;
 	border-radius: 8px;
 	font-size: 16px;
+	transition: 0.6s;
+	cursor: pointer;
+
+	&:disabled {
+		background: #DBE2EA;
+		color: #B1B5BF;
+	}
 }
 
 .checkbox {
@@ -119,4 +148,21 @@ $span-color: #756F86;
 	display: flex;
 	align-items: center;
 	margin-bottom: 36px;
+}
+
+.wrong-value {
+	display: inline-block;
+	color: $wrong-color;
+	font-size: 18px;
+	position: absolute;
+	left: 0;
+	bottom: -24px;
+	opacity: 0;
+	visibility: hidden;
+	transition: 0.3s;
+
+	&.activated {
+		opacity: 1;
+		visibility: visible;
+	}
 }
