@@ -1,5 +1,7 @@
 # vue-form
 
+Ссылка на рабочую версию https://bogdangor67.github.io/vue-form/
+
 ## Project setup
 ```
 npm install
